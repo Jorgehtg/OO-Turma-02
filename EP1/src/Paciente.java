@@ -1,5 +1,4 @@
-public class Paciente {
-	private String nome;
+public class Paciente extends Pessoa{
     private String cpf;
     private int idade;
     private String[] historico;
@@ -7,7 +6,7 @@ public class Paciente {
     
 
     public Paciente() {
-    	this.nome = "";
+        super();
     	this.cpf = "";
     	this.idade = 0;
     	this.historico = new String[0];
@@ -15,21 +14,13 @@ public class Paciente {
     }
     
     public Paciente(String nome, String cpf, int idade, String[] historico, String[] internações) {
-        this.nome = nome;
+        super(nome);
         this.cpf = cpf;
         this.idade = idade;
         this.historico = historico;
         this.internações = internações;
     }
-
-    public String getNome() {
-        return this.nome;
-    }
     
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getCpf() {
         return this.cpf;
     }
