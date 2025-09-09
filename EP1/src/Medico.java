@@ -1,5 +1,4 @@
-public class Medico {
-    private String nome;
+public class Medico extends Pessoa {
 	private String crm;
 	private Especialidade especialidade;
 	private float valores;
@@ -8,7 +7,6 @@ public class Medico {
 	
 	public Medico() {
 		super();
-		this.nome = "";
 		this.crm = "";
 		this.especialidade = null;
 		this.valores = 0.0f;
@@ -16,19 +14,11 @@ public class Medico {
 	}
 	
 	public Medico(String nome, String crm, Especialidade especialidade, float valores, String[] horarios) {
-		this.nome = nome;
+		super(nome);
 		this.crm = crm;
 		this.especialidade = especialidade;
 		this.valores = valores;
 		this.horarios = horarios;
-	}
-	
-	public String getNome() {
-		return this.nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 	
 	public String getCrm() {
