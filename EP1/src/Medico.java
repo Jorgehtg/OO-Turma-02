@@ -1,24 +1,24 @@
 public class Medico extends Pessoa {
 	private String crm;
 	private Especialidade especialidade;
-	private float valores;
-	private String[] horarios;
+	private double custoConsulta;
+	private String[] agenda;
 	
 	
 	public Medico() {
 		super();
 		this.crm = "";
 		this.especialidade = null;
-		this.valores = 0.0f;
-		this.horarios = new String[0];
+		this.custoConsulta = 0.0;
+		this.agenda = new String[10];
 	}
 	
-	public Medico(String nome, String crm, Especialidade especialidade, float valores, String[] horarios) {
+	public Medico(String nome, String crm, Especialidade especialidade, double custoConsulta, String[] agenda) {
 		super(nome);
 		this.crm = crm;
 		this.especialidade = especialidade;
-		this.valores = valores;
-		this.horarios = horarios;
+		this.custoConsulta = custoConsulta;
+		this.agenda = agenda;
 	}
 	
 	public String getCrm() {
@@ -29,12 +29,12 @@ public class Medico extends Pessoa {
 		this.crm = crm;
 	}
 	
-	public float getValores() {
-		return this.valores;
+	public double getCustoConsulta() {
+		return this.custoConsulta;
 	}
 	
-	public void setValores(float valores) {
-		this.valores = valores;
+	public void setCustoConsulta(double custoConsulta) {
+		this.custoConsulta = custoConsulta;
 	}
 	
 	public Especialidade getEspecialidade() {
@@ -45,11 +45,18 @@ public class Medico extends Pessoa {
 		this.especialidade = especialidade;
 	}
 	
-	public String[] getHorarios() {
-		return horarios;
+	public String[] getAgenda() {
+		return agenda;
 	}
 	
-	public void setHorarios(String[] horarios) {
-		this.horarios = horarios;
+	public void setAgenda(String[] horarios) {
+		this.agenda = horarios;
 	}
+
+	public void mostrarAgenda(){
+		System.out.print("Horarios disponiveis: ");
+		 for (int i = 0; i < agenda.length; i++) {
+            System.out.print(agenda[i]);
+		 }
+		}
 }
