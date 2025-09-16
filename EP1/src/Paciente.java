@@ -1,23 +1,18 @@
-public class Paciente extends Pessoa {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Paciente extends Pessoa{
     private String cpf;
     private int idade;
-    private String[] historicoConsulta;
-    private String[] historicoInternacao;
+    private List<Consulta> consultas;
+    private List<Internação> internações;
 
-    public Paciente(){
-        super();
-        this.cpf = "";
-        this.idade = 0;
-        this.historicoConsulta = new String[0];
-        this.historicoInternacao = new String[0];
-    }
-
-    public Paciente(String nome, String cpf, int idade, String[] consultas, String[] internacoes){
+    public Paciente(String nome, String cpf, int idade){
         super(nome);
         this.cpf = cpf;
         this.idade = idade;
-        this.historicoConsulta = consultas;
-        this.historicoInternacao = internacoes;
+        this.consultas = new ArrayList<>();
+        this.internações = new ArrayList<>();
     }
 
     public String getCpf(){
@@ -29,11 +24,26 @@ public class Paciente extends Pessoa {
     }
 
     public int getIdade(){
-        return this.idade;
+        return idade;
     }
 
     public void setIdade(int idade){
         this.idade = idade;
     }
+
+    public List<Consulta> getConsultas(){
+        return consultas;
+    }
+
+    public List<Internação> getInternações(){
+        return internações;
+    }
+
+    public void adicionarConsulta(Consulta consulta){
+        this.consultas.add(consulta);
+    }
     
+    public void adicionarInternação(Internação internação){
+        this.internações.add(internação);
+    }
 }
