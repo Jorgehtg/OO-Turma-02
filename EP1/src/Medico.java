@@ -1,16 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Medico extends Pessoa {
     private String crm;
     protected double valorConsulta;
-    private String[] agenda;
+    private List<String> agenda;
     
     public Medico(){
         super();
         this.crm = "";
         this.valorConsulta = 0.0;
-        this.agenda = new String[0];
+        this.agenda = new ArrayList<>();
     }
 
-    public Medico(String nome, String crm, double valorConsulta, String[] agenda){
+    public Medico(String nome, String crm, double valorConsulta, List<String> agenda){
         super(nome);
         this.crm = crm;
         this.valorConsulta = valorConsulta;
@@ -33,12 +36,19 @@ public class Medico extends Pessoa {
         this.valorConsulta = valorConsulta;
     }
 
-    public String[] getAgenda(){
+    public List<String> getAgenda(){
         return agenda;
     }
 
-    public void setAgenda(String[] agenda){
+    public void setAgenda(List<String> agenda){
         this.agenda = agenda;
     }
     
+    public void adicionaHorario(String horario){
+        agenda.add(horario);
+    }
+
+    public void removeHorario(String horario){
+        agenda.remove(horario);
+    }
 }
