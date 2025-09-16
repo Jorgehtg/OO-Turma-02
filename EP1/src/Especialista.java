@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Especialista extends Medico{
     private String especialidade;
 
@@ -6,7 +8,7 @@ public class Especialista extends Medico{
         this.especialidade = "";
     }
 
-    public Especialista(String nome, String crm, double valorConsulta, String[] agenda, String especialidade){
+    public Especialista(String nome, String crm, double valorConsulta, List<String> agenda, String especialidade){
         super(nome, crm, valorConsulta, agenda);
         this.especialidade = especialidade;
     }
@@ -20,14 +22,8 @@ public class Especialista extends Medico{
     }
 
     @Override
-    public double getValorConsulta(){
-        return this.valorConsulta;
-    }
-
     public void setValorConsulta(double valorConsulta){
         this.valorConsulta = valorConsulta;        
     }
 
-
-    
 }
