@@ -6,7 +6,7 @@ public class Paciente extends Pessoa {
 
     public Paciente(){
         super();
-        this.cpf = "000000000-00";
+        this.cpf = "";
         this.idade = 0;
         this.historicoConsulta = new String[0];
         this.historicoInternacao = new String[0];
